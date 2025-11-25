@@ -1,4 +1,5 @@
-const socket = io();
+const RENDER_URL = "https://two5-lab-collaborative.onrender.com"; // ⚠️ 用您自己的 Render URL 替换
+const socket = io(RENDER_URL);
 const rtcConfig = { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] };
 
 let pc;
