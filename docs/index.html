@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holiday Room</title>
+    <!-- CSS 引用：相对路径正确 -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,6 +32,7 @@
                     </select>
                 </div>
 
+                <!-- enterRoom 函数现在应该能被识别了 -->
                 <button onclick="enterRoom()" class="enter-btn">Enter Room</button>
             </div>
         </div>
@@ -88,7 +90,9 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
+    
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
     <script src="script.js"></script>
 </body>
 </html>
