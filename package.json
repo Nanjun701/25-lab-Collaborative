@@ -14,5 +14,16 @@
   "dependencies": {
     "express": "^5.1.0",
     "socket.io": "^4.8.1"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nanjun701/25-lab-Collaborative.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nanjun701/25-lab-Collaborative/issues"
+  },
+  "homepage": "https://github.com/Nanjun701/25-lab-Collaborative#readme"
 }
