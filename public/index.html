@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="landing-page">
+        <div class="landing-content">
+            <h1>🏠 Holiday Room</h1>
+            <p>Bridge the distance and create a cozy space with the people who matter most.</p>
+            
+            <div class="setup-group">
+                <div class="input-row">
+                    <label>Room Code</label>
+                    <label>💡 Tip: Enter the same code to join the same room. </label>
+
+                    <input type="text" id="room-input" maxlength="10">
+                </div>
+                
+                <div class="input-row">
+                    <label>Select Theme</label>
+                    <select id="landing-theme-selector">
+                        <option value="christmas">🎄 Christmas</option>
+                        <option value="cny">🧧 Chinese New Year</option>
+                        <option value="valentine">💖 Valentine's Day</option>
+            
+                    </select>
+                </div>
+
+                <button onclick="enterRoom()" class="enter-btn">Enter Room</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-app" style="display: none;">
+        
+        <div id="header">
+            <div class="header-left">
+                <button onclick="location.reload()" class="back-btn">⬅ Quit</button>
+            </div>
+            
+            <div class="header-right">
+                <span id="current-room-id"></span>
+                <div id="connection-status">
+                    <span id="status-dot">🔴</span>
+                    <span id="status-text">Waiting for connection...</span>
+                </div>
+                <button onclick="showShowcase()" class="finish-btn">✅ Finish</button>
+            </div>
+        </div>
+
+        <div id="room-area">
+            <div id="canvas-container">
+                </div>
+        </div>
+
+        <div id="bottom-container">
+            <div id="category-tabs">
+                <button id="btn-christmas" class="tab-btn" onclick="switchCategory('christmas')" style="display:none">🎄 Christmas Exclusive</button>
+                <button id="btn-cny" class="tab-btn" onclick="switchCategory('cny')" style="display:none">🧧 CNY Exclusive</button>
+                <button id="btn-valentine" class="tab-btn" onclick="switchCategory('valentine')" style="display:none">💖 Romance Exclusive</button>
+
+                <button id="btn-furniture" class="tab-btn" onclick="switchCategory('furniture')">🛋️ Furniture</button>
+                <button id="btn-people" class="tab-btn" onclick="switchCategory('people')">😀 People</button>
+                <button id="btn-pets" class="tab-btn" onclick="switchCategory('pets')">🐾 Pets</button>
+                <button id="btn-custom" class="tab-btn custom-btn" onclick="switchCategory('custom')">➕ Custom</button>
+            </div>
+            
+            <div id="assets-bar"></div>
+        </div>
+    </div>
+    
+   <div id="showcase-overlay" style="display: none;">
+        <div class="showcase-card">
+            <h2>✨ Your creation is complete!</h2>
+            <div id="preview-container">
+                <img id="preview-img" src="" alt="Preview Image">
+            </div>
+            <div class="showcase-actions">
+                <button onclick="downloadImage()" class="download-btn">⬇️ Save Image</button>
+                <button onclick="closeShowcase()" class="close-btn">✏️ Continue Editing</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
